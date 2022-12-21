@@ -28,7 +28,7 @@ $sid=get-aduser $user -erroraction stop
 if ($maxthreads -eq 0){
 	$maxthreads=50
 }
-if ($comps -eq $null -or $AllServers -ne $True){
+if ($comps -eq $null -and $AllServers -ne $True){
 	$comps=(get-adcomputer -filter {enabled -eq "True"} -erroraction stop).name
 } 
 if ($AllServers -eq $True){
